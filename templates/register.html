@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Register</h2>
+    <form action="/register" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <p>Already have an account? <a href="/">Login here</a>.</p> <!-- Расположение строки с ссылкой -->
+        <input type="submit" value="Register">
+    </form>
+</div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

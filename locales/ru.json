@@ -1,0 +1,30 @@
+[
+  {
+    "id": "Welcome",
+    "translation": "Добро пожаловать"
+  },
+  {
+    "id": "Login",
+    "translation": "Войти"
+  },
+  {
+    "id": "Register",
+    "translation": "Зарегистрироваться"
+  },
+  {
+    "id": "Username",
+    "translation": "Имя пользователя"
+  },
+  {
+    "id": "Password",
+    "translation": "Пароль"
+  },
+  {
+    "id": "AlreadyHaveAccount",
+    "translation": "Уже есть аккаунт?"
+  },
+  {
+    "id": "LoginHere",
+    "translation": "Войдите здесь"
+  }
+]

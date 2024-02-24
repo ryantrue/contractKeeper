@@ -1,0 +1,171 @@
+/* Определение переменных для светлой и темной темы */
+:root {
+    /* Цвета */
+    --background-color-light: #EDEEF0;
+    --container-background-color-light: #fff;
+    --text-color-light: #5A7D9A;
+    --input-background-color-light: #F7F8FA;
+    --input-border-color-light: #B1C4D6;
+    --button-background-color-light: #549CD2;
+    --button-hover-background-color-light: #3C82B9;
+    --link-color-light: #549CD2;
+    --link-hover-color-light: #3C82B9;
+
+    --background-color-dark: #2C2E33;
+    --container-background-color-dark: #3A3B3F;
+    --text-color-dark: #C0C4CC;
+    --input-background-color-dark: #484B52;
+    --input-border-color-dark: #626469;
+    --button-background-color-dark: #4F8BF9;
+    --button-hover-background-color-dark: #4178C8;
+    --link-color-dark: #C0C4CC;
+    --link-hover-color-dark: #5890FF;
+
+    /* Размеры и отступы */
+    --container-padding: 40px;
+    --container-max-width: 400px;
+    --element-margin-bottom: 20px;
+    --input-padding: 15px;
+    --button-padding: 15px;
+    --form-spacing: 20px;
+
+    /* Радиусы скругления */
+    --border-radius: 5px;
+
+    /* Тени */
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--background-color-dark);
+        --container-background-color: var(--container-background-color-dark);
+        --text-color: var(--text-color-dark);
+        --input-background-color: var(--input-background-color-dark);
+        --input-border-color: var(--input-border-color-dark);
+        --button-background-color: var(--button-background-color-dark);
+        --button-hover-background-color: var(--button-hover-background-color-dark);
+        --link-color: var(--link-color-dark);
+        --link-hover-color: var(--link-hover-color-dark);
+        --box-shadow: var(--box-shadow-dark);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: var(--background-color-light);
+        --container-background-color: var(--container-background-color-light);
+        --text-color: var(--text-color-light);
+        --input-background-color: var(--input-background-color-light);
+        --input-border-color: var(--input-border-color-light);
+        --button-background-color: var(--button-background-color-light);
+        --button-hover-background-color: var(--button-hover-background-color-light);
+        --link-color: var(--link-color-light);
+        --link-hover-color: var(--link-hover-color-light);
+    }
+}
+
+/* Сброс стилей и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Open Sans', Arial, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--container-background-color);
+    padding: var(--container-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-bottom: var(--element-margin-bottom);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: var(--element-margin-bottom);
+    color: var(--text-color);
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: var(--input-padding);
+    margin-bottom: var(--element-margin-bottom);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: var(--button-background-color);
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: var(--button-background-color);
+    color: white;
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: var(--form-spacing);
+}
+
+input[type="submit"]:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+form p, a {
+    text-align: center;
+    color: var(--link-color);
+    text-decoration: none;
+    margin-top: var(--form-spacing);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+}
+
+/* Отзывчивость */
+@media (max-width: 480px) {
+    .container {
+        padding: calc(var(--container-padding) / 2);
+        width: calc(100% - var(--container-padding));
+    }
+
+    h2 {
+        font-size: calc(24px * 0.75);
+    }
+
+    input[type="submit"] {
+        padding: calc(var(--button-padding) * 0.8);
+        font-size: calc(16px * 0.875);
+    }
+}
